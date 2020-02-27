@@ -1,0 +1,150 @@
+@extends('plantilla')
+@section('titulo', "$titulo")
+@section('scripts')
+<script>
+    globalId = '<?php echo isset($menu->idfooter) && $menu->idfooter > 0 ? $menu->idfooter : 0; ?>';
+    <?php $globalId = isset($menu->idfooter) ? $menu->idfooter : "0"; ?>
+
+</script>
+@endsection
+@section('breadcrumb')
+<ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/home">Inicio</a></li>
+    <li class="breadcrumb-item"><a href="/footer"> Footer </a></li>
+    <li class="breadcrumb-item active">Modificar</li>
+</ol>
+<ol class="toolbar">
+    <li class="btn-item"><a title="Nuevo" href="footer/nuevo" class="fa fa-plus-circle" aria-hidden="true"><span>Nuevo</span></a></li>
+    <li class="btn-item"><a title="Guardar" href="#" class="fa fa-floppy-o" aria-hidden="true" onclick="javascript: $('#modalGuardar').modal('toggle');"><span>Guardar</span></a>
+    </li>
+    <li class="btn-item"><a title="Guardar" href="#" class="fa fa-trash-o" aria-hidden="true" onclick="javascript: $('#mdlEliminar').modal('toggle');"><span>Eliminar</span></a>
+    </li>
+    <li class="btn-item"><a title="Salir" href="#" class="fa fa-arrow-circle-o-left" aria-hidden="true" onclick="javascript: $('#modalSalir').modal('toggle');"><span>Salir</span></a></li>
+</ol>
+<script>
+function fsalir(){
+    location.href ="/configuracion/footer";
+}
+</script>
+@endsection
+@section('contenido')
+<?php
+if (isset($msg)) {
+    echo '<div id = "msg"></div>';
+    echo '<script>msgShow("' . $msg["MSG"] . '", "' . $msg["ESTADO"] . '")</script>';
+}
+?>
+<div class="panel-body">
+        <div id = "msg"></div>
+        <?php
+        if (isset($msg)) {
+            echo '<script>msgShow("' . $msg["MSG"] . '", "' . $msg["ESTADO"] . '")</script>';
+        }
+        ?>
+        <form id="form1" method="POST">
+            <div class="row">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}"></input>
+                <input type="hidden" id="id" name="id" class="form-control" value="{{$globalId}}" required>
+                <div class="form-group col-lg-6">
+                    <label>Telefono: *</label>
+                    <input type="text" id="txtTelefono" name="txtTelefono" class="form-control" value="{{$menu->titulo_del_sitio or ''}}" required>
+                </div>
+                 <div class="form-group col-lg-6">
+                 <label>Email: *</label>
+                 <input type="email" id="txtEmail" name="txtEmail" class="form-control" value="{{$menu->email_contacto or ''}}" required>
+                  </div>
+                  <div class="form-group col-lg-6">
+                    <label>Domicilio: *</label>
+                    <input type="text" id="txtDomicilio" name="txtDomicilio" class="form-control" value="{{$menu->titulo_del_sitio or ''}}" required>
+                </div>
+                <div class="form-group col-lg-6">
+                    <label>Web: *</label>
+                    <input type="text" id="txtWeb" name="txtWeb" class="form-control" value="{{$menu->titulo_del_sitio or ''}}" required>
+                </div>
+                <div class="form-group col-lg-6">
+                    <label>Instagram: *</label>
+                    <input type="text" id="txtInstagram" name="txtInstagram" class="form-control" value="{{$menu->titulo_del_sitio or ''}}" required>
+                </div>
+                <div class="form-group col-lg-6">
+                    <label>Facebook: *</label>
+                    <input type="text" id="txtFacebook" name="txtFacebook" class="form-control" value="{{$menu->titulo_del_sitio or ''}}" required>
+                </div>
+                <div class="form-group col-lg-6">
+                    <label>Youtube: *</label>
+                    <input type="text" id="txtYoutube" name="txtYoutube" class="form-control" value="{{$menu->titulo_del_sitio or ''}}" required>
+                </div>
+                <div class="form-group col-lg-6">
+                    <label>Whatsapp: *</label>
+                    <input type="text" id="txtWhatsapp" name="txtWhatsapp" class="form-control" value="{{$menu->titulo_del_sitio or ''}}" required>
+                </div>
+                <div class="form-group col-lg-6">
+                    <label>Twitter: *</label>
+                    <input type="text" id="txtTwitter" name="txtTwitter" class="form-control" value="{{$menu->titulo_del_sitio or ''}}" required>
+                </div>
+                <div class="form-group col-lg-6">
+                    <label>Github: *</label>
+                    <input type="text" id="txtGithub" name="txtGithub" class="form-control" value="{{$menu->titulo_del_sitio or ''}}" required>
+                </div>
+                <div class="form-group col-lg-6">
+                    <label>Linkedin: *</label>
+                    <input type="text" id="txtLinkedin" name="txtLinkedin" class="form-control" value="{{$menu->titulo_del_sitio or ''}}" required>
+                </div>
+            </div>
+
+            </div>
+        </form>
+</div>
+<div class="modal fade" id="mdlEliminar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Eliminar registro?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">¿Deseas eliminar el registro actual?</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">No</button>
+            <button type="button" class="btn btn-primary" onclick="eliminar();">Sí</button>
+          </div>
+        </div>
+      </div>
+    </div>
+<script>
+
+    $("#form1").validate();
+
+    function guardar() {
+        if ($("#form1").valid()) {
+            modificado = false;
+            form1.submit(); 
+        } else {
+            $("#modalGuardar").modal('toggle');
+            msgShow("Corrija los errores e intente nuevamente.", "danger");
+            return false;
+        }
+    }
+
+    function eliminar() {
+        $.ajax({
+            type: "GET",
+            url: "{{ asset('footer/eliminar') }}",
+            data: { id:globalId },
+            async: true,
+            dataType: "json",
+            success: function (data) {
+                if (data.err = "0") {
+                    msgShow("Registro eliminado exitosamente.", "success");
+                    $("#btnEnviar").hide();
+                    $("#btnEliminar").hide();
+                    $('#mdlEliminar').modal('toggle');
+                } else {
+                    msgShow("Error al eliminar", "success");
+                }
+            }
+        });
+    }
+
+</script>
+@endsection

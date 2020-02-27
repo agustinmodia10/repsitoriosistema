@@ -1,0 +1,279 @@
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+@font-face {
+    font-family: CeraProBold;
+    src: url('../fonts/Cera Pro Bold.otf');
+}
+@font-face {
+    font-family: CeraProBlack;
+    src: url('../fonts/Cera Pro Black.otf');
+}
+@font-face {
+    font-family: CeraProLight;
+    src: url('../fonts/Cera Pro Light.otf');
+}
+@font-face {
+    font-family: CeraProRegular;
+    src: url('../fonts/Cera Pro Regular.otf');
+}
+#home {
+    background-image: url(../images/home1.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.logo{
+	width: 90px;
+}
+.logo-fultena{
+    width: 120px;
+}
+nav a{
+	color:white;
+	font-style: bold;
+	font-family: "CeraProBold";
+	font-weight: bold;
+}
+.nav-link {
+    font-size: 19px;
+    letter-spacing: 1px;
+}
+.nav-item{
+	padding: 0 70px;
+}
+h1{
+	font-family: "CeraProBlack";
+	color:white;
+	font-size: 38px;
+}
+#home p{
+	font-family: "CeraProLight";
+	color:white;
+	font-size: 18px;
+}
+.footer p{
+    font-family: "CeraProRegular";
+    font-size: 16px;
+}
+.footericonosdiv{
+    font-family: "CeraProRegular";
+    font-size: 16px;
+    background-color: #5BA393;
+}
+#buscador{
+    width: 390px;
+    border-left:0px; 
+    border-right:0px;
+    border-top:0px; 
+    border-bottom: 0;    
+}
+.tituloNegrita{
+    text-align: center;  
+    color:black;
+    font-weight: 800;
+    size: 36px;
+}
+.searchContainer{
+    background-color: white;
+}
+a{ 
+    text-decoration:none;
+    color: rgb(48, 46, 46);
+}
+a:hover{
+    text-decoration: none;
+    color:rgb(0, 0, 0);
+    font-weight: bold;
+    border-bottom:1px solid rgb(46, 43, 43);
+
+}
+#botonSearch{
+    border:none;
+    background-color: white;
+}
+#buscadorCol{
+    margin: 0 30%;
+    border-bottom: 1px solid grey;
+
+}
+#resultados{
+    color:#5BA393;
+}
+.card-body{
+    background-color:#5BA393;
+}
+#containerresultados h3{
+    color: white;
+    font-size:22px ;
+    font-family: "CeraProBlack";
+}
+.card-header{
+    padding: 0%;
+}
+#containerresultados{
+    background-color: rgb(216, 208, 208);
+}
+#colbuscador{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+#buttoncardfoooter{
+    background-color:#5BA393;
+    float: right;
+    color:white !important;
+    font-size: 12px;
+}
+#button_card{
+    background-color:#5BA393;
+    float: right;
+    color:white !important;
+    font-size: 12px;
+}
+#botonsubscripcion{
+    background-color:#5BA393;
+    color:white !important;
+}
+#subscripcion{
+    width: 400px;
+    display: inline;
+}
+#parrafoexpl{
+    color: grey;
+}
+footer, footer a {
+    color:white;
+}
+.redes i{
+    font-size: 30px;
+    border: 1px solid;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    padding: 8px 0 0 0;
+    border-radius: 80px;
+    margin: 0 10px;
+    background-color:white;
+    color:#5BA393;
+}
+#descripcionCuadro{
+    background-color: white;
+    border-color: rgb(70, 70, 70);
+    padding: 7px;
+}
+hr{
+    border-color: #5BA393;
+}
+#imagenDescripcion{
+    width:325px;
+    padding-left: 3%;
+}
+#linkvolver:hover{
+    color: #5BA393 !important;
+}
+#Situacion{
+    font-size: 31px;
+    color:black;
+}
+#rowenfoque .btn{
+    background-color:#5BA393;
+    color:white !important;
+}
+#rowenfoque h6{
+    color:grey;
+}
+#rowenfoque li{
+    color:grey;
+}
+#rowenfoque h4{
+    color:#5BA393;
+}
+#rowenfoque a{
+    color: #5BA393;
+}
+#rowenfoque{
+    border-bottom: 1px solid grey;
+}
+#linkvolver{
+    color:#5BA393 !important;
+}
+#coldescripcion{
+    border-left: 1px solid #5BA393 ;
+}
+#coldescripcion h2{
+    color:#5BA393;
+    size:25px;
+}
+#coldescripcion p{
+    color: rgb(112, 109, 109);
+    size:16px;
+}
+#coldescripcion a{
+    color: #5BA393 !important;
+    size:16px;
+}
+#coldescripcion #buttonDescripcion{
+    background-color:#5BA393;
+    float: right;
+    color:white !important;
+    margin-right:4%;
+}
+#arrowleft{
+    color:#5BA393 !important;
+}
+#coldescripcionescencia .btn{
+    background-color:black;
+    float: right;
+    color:white !important;
+}
+#coldescripcionescencia p{
+    color: rgb(112, 109, 109);
+    size:16px;
+}
+#coldescripcionescencia{
+    border-left: 1px solid #5BA393 ;
+}
+#coldescripcionescencia h2{
+    color:#5BA393;
+    size:25px;
+}
+#misEscencias{
+    color:#5BA393;
+}
+#contacto{
+    color:#5BA393;
+}
+#botonContacto{
+    background-color:#5BA393;
+    color:white !important;
+}
+#containerContacto{
+    padding:8%;
+}
+#rowabecedario a{
+    color:#5BA393;
+    padding-right:2%;
+}
+#rowabecedario{
+    padding-left: 13%;
+    font-size:19px;
+}
+#buttoncargarescencias{
+    background-color:rgb(48, 47, 47);
+    margin-left: 37%;
+    color:white !important;
+}
+#btninforme{
+    background-color:rgb(48, 47, 47) !important;
+    float:right;
+    color:white !important;
+    margin-top: 4%;
+}
+.imagenProducto {
+    height:227px;
+  }
+#Situacion{
+    color:#5BA393 !important;
+}
+#Situacion2{
+    color: 9E9E9E;
+}

@@ -1,0 +1,62 @@
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+@font-face {
+    font-family: CeraProBold;
+    src: url('../fonts/Cera Pro Bold.otf');
+}
+@font-face {
+    font-family: CeraProBlack;
+    src: url('../fonts/Cera Pro Black.otf');
+}
+@font-face {
+    font-family: CeraProLight;
+    src: url('../fonts/Cera Pro Light.otf');
+}
+@font-face {
+    font-family: CeraProRegular;
+    src: url('../fonts/Cera Pro Regular.otf');
+}
+#home {
+    background-image: url(../images/home1.png);
+    background-repeat: repeat;
+    background-size: 100%;
+    min-height: 550px;
+}
+.logo{
+	width: 120px;
+}
+.logo-fultena{
+	width: 165px;
+}
+nav a{
+	color:white;
+	font-style: bold;
+	font-family: "CeraProBold";
+	font-weight: bold;
+}
+.nav-link {
+    font-size: 19px;
+    letter-spacing: 1px;
+}
+.nav-item{
+	padding: 0 70px;
+}
+h1{
+	font-family: "CeraProBlack";
+	color:white;
+	font-size: 60px;
+}
+#home p{
+	font-family: "CeraProLight";
+	color:white;
+	font-size: 18px;
+}
+.footer p{
+    font-family: "CeraProRegular";
+    font-size: 16px;
+}
+.footer #colfooter{
+    font-family: "CeraProRegular";
+    font-size: 16px;
+}
